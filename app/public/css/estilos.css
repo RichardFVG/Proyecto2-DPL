@@ -1,0 +1,223 @@
+/* css/estilos.css */
+
+/* Estilos base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eaf8f9;
+    margin: 20px;
+    padding: 0;
+    color: #333;
+}
+
+/* Animación del título con tres colores y cambio de tamaño menos drástico */
+@keyframes titleCycle {
+    0% { color: #007c7a; transform: scale(1); }
+    33% { color: #39FF14; transform: scale(1.05); } /* Menos escala */
+    67% { color: #0021F3; transform: scale(1.05); } /* Menos escala */
+    100% { color: #007c7a; transform: scale(1); }
+}
+
+/* Clase para el título principal subrayado con animación */
+.title-underline {
+    display: inline-block;
+    text-decoration: underline;
+    animation: titleCycle 5s infinite ease-in-out;
+}
+
+/* Títulos */
+h1, h2, h3 {
+    text-align: center;
+    color: #007c7a; 
+}
+
+hr {
+    margin: 20px 0;
+}
+
+/* Footer */
+.footer {
+    text-align: right; 
+    font-size: 0.9em;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Enlaces */
+a {
+    color: #007c7a;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a:hover {
+    color: #ffffff;
+    background-color: #007c7a;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+/* Contenedores de productos */
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    gap: 10px;
+}
+
+.producto {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 15px;
+    width: 200px;
+    background-color: #ffffff;
+    text-align: center;
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.producto:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.producto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; 
+}
+
+/* Tablas */
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 8px; 
+    overflow: hidden;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #00a69c; 
+    color: #fff;
+}
+
+/* Formularios */
+form {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 400px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+textarea, 
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Botones */
+button, 
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #00a69c;
+    border: none;
+    border-radius: 6px; 
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 5px 0;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover, 
+input[type="submit"]:hover {
+    background-color: #007c7a; 
+    transform: scale(1.05);
+}
+
+/* Listas */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #ffffff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Responsividad adicional */
+@media (max-width: 600px) {
+    body {
+        margin: 10px; 
+    }
+
+    .producto {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    table, form {
+        width: 95%;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.2em;
+    }
+
+    .productos {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .productos {
+        max-width: 700px;
+    }
+    .producto {
+        width: calc(50% - 20px); 
+    }
+}
+
+@media (max-width: 400px) {
+    .producto {
+        width: 100%; 
+    }
+}
