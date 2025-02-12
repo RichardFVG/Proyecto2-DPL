@@ -1,7 +1,7 @@
 <?php
-// 1. Incluyo el archivo header.php para la 
-// estructura y la barra de navegación.
-require __DIR__ . '/../layout/header.php';
+    // 1. Incluyo el archivo header.php para la 
+    // estructura y la barra de navegación.
+    require __DIR__ . '/../layout/header.php';
 ?>
 
 <!-- 2. Encabezado para indicar que el 
@@ -20,7 +20,8 @@ require __DIR__ . '/../layout/header.php';
 <!-- 4. Formulario que envía los datos al 
  método procesarRegistro del controlador de 
  usuario. -->
-<form action="index.php?controller=usuario&action=procesarRegistro" method="POST">
+<form action="index.php?controller=usuario&action=procesarRegistro" 
+method="POST">
     <!-- 5. Campo para el nombre del usuario, 
      marcado como obligatorio. -->
     <label for="nombre">Nombre:</label>
@@ -71,7 +72,7 @@ require __DIR__ . '/../layout/header.php';
 </p>
 
 <?php
-// 13. Incluyo el archivo footer.php para cerrar la 
-// estructura HTML.
-require __DIR__ . '/../layout/footer.php';
+    // 13. Incluyo el archivo footer.php para cerrar la 
+    // estructura HTML.
+    require __DIR__ . '/../layout/footer.php';
 ?>

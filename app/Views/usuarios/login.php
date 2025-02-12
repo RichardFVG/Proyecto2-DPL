@@ -1,7 +1,7 @@
 <?php
-// 1. Incluyo la cabecera (header.php) para 
-// la estructura básica de la página.
-require __DIR__ . '/../layout/header.php';
+    // 1. Incluyo la cabecera (header.php) para 
+    // la estructura básica de la página.
+    require __DIR__ . '/../layout/header.php';
 ?>
 
 <!-- 2. Encabezado para el formulario de 
@@ -13,7 +13,11 @@ require __DIR__ . '/../layout/header.php';
  con éxito). -->
 <?php if (isset($_GET['message'])): ?>
     <p style="color: green;">
-        <?php echo htmlspecialchars($_GET['message']); ?>
+        <?php 
+            echo htmlspecialchars(
+                $_GET['message']
+            ); 
+        ?>
     </p>
 <?php endif; ?>
 
@@ -22,14 +26,17 @@ require __DIR__ . '/../layout/header.php';
  credenciales incorrectas). -->
 <?php if (isset($error)): ?>
     <p style="color: red;">
-        <?php echo htmlspecialchars($error); ?>
+        <?php 
+            echo htmlspecialchars($error); 
+        ?>
     </p>
 <?php endif; ?>
 
 <!-- 5. Formulario que envía los datos a la 
  acción 'procesarLogin' del controlador 
  'usuario'. -->
-<form action="index.php?controller=usuario&action=procesarLogin" method="POST">
+<form action="index.php?controller=usuario&action=procesarLogin" 
+method="POST">
     <!-- 6. Campo para el correo electrónico, 
      marcado como obligatorio. -->
     <label for="email">Correo Electrónico:</label>
@@ -63,7 +70,7 @@ require __DIR__ . '/../layout/header.php';
 </p>
 
 <?php
-// 11. Incluyo el footer, que cierra la 
-// estructura HTML.
-require __DIR__ . '/../layout/footer.php';
+    // 11. Incluyo el footer, que cierra la 
+    // estructura HTML.
+    require __DIR__ . '/../layout/footer.php';
 ?>

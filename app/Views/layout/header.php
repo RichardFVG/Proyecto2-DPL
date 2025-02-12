@@ -7,7 +7,8 @@
     
     <!-- 2. Meta viewport para adaptarse a 
      dispositivos móviles. -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0">
     
     <!-- 3. Título de la página, aparece en 
      la pestaña del navegador. -->
@@ -18,7 +19,8 @@
     <link rel="stylesheet" href="css/estilos.css">
     
     <!-- 5. Favicon para el sitio web. -->
-    <link rel="icon" href="/img2/RFVG.png" type="image/png">
+    <link rel="icon" href="/img2/RFVG.png" 
+    type="image/png">
 </head>
 <body>
     <!-- 6. Título principal con clase que 
@@ -42,7 +44,11 @@
         <p>
             <!-- 9. Muestro el nombre del usuario 
              logueado. -->
-            Hola, <?php echo htmlspecialchars($_SESSION['nombre_usuario']); ?> |
+            Hola, <?php 
+                echo htmlspecialchars(
+                    $_SESSION['nombre_usuario']
+                ); 
+            ?> |
 
             <!-- 10. Enlace para cerrar sesión. -->
             <a href="index.php?controller=usuario&action=logout">
@@ -52,7 +58,12 @@
             <!-- 11. Verifico si el usuario es 
              administrador para mostrar opciones 
              adicionales. -->
-            <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1): ?>
+            <?php 
+                if (
+                    isset($_SESSION['admin']) && 
+                    $_SESSION['admin'] == 1
+                ): 
+            ?>
                 <!-- 11. Enlace para agregar producto, 
                  solo visible para admin. -->
                 <a href="index.php?controller=producto&action=agregar">
