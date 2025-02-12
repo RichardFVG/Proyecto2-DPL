@@ -1,7 +1,7 @@
-/* css/estilos.css */
-
-/* Estilos base */
-* {
+/* 1. Estilos base para la página,
+   aplicando box-sizing y preparando la 
+   tipografía y fondo */
+   * {
     box-sizing: border-box;
 }
 
@@ -13,42 +13,47 @@ body {
     color: #333;
 }
 
-/* Animación del título con tres colores y cambio de tamaño menos drástico */
+/* 2. Defino una animación para el título, 
+alternando colores y un leve zoom */
 @keyframes titleCycle {
     0% { color: #007c7a; transform: scale(1); }
-    33% { color: #39FF14; transform: scale(1.05); } /* Menos escala */
-    67% { color: #0021F3; transform: scale(1.05); } /* Menos escala */
+    33% { color: #39FF14; transform: scale(1.05); } /* Aumento leve de escala y cambio de color */
+    67% { color: #0021F3; transform: scale(1.05); } /* Siguiente cambio de color con la misma escala */
     100% { color: #007c7a; transform: scale(1); }
 }
 
-/* Clase para el título principal subrayado con animación */
 .title-underline {
     display: inline-block;
     text-decoration: underline;
     animation: titleCycle 5s infinite ease-in-out;
 }
 
-/* Títulos */
 h1, h2, h3 {
     text-align: center;
-    color: #007c7a; 
+    color: #007c7a;
 }
 
+/* 3. Margen vertical para separar secciones 
+mediante una línea */
 hr {
     margin: 20px 0;
 }
 
-/* Footer */
+/* 4. Footer: alineado a la derecha y tamaño 
+de fuente un poco menor */
 .footer {
     text-align: right; 
     font-size: 0.9em;
 }
 
+/* 5. Elimino el margen extra de los párrafos 
+dentro del footer */
 .footer p {
-    margin: 0;
+    margin: 0; 
 }
 
-/* Enlaces */
+/* 6. Estilos para los enlaces, resaltándolos 
+al pasar el ratón */
 a {
     color: #007c7a;
     text-decoration: none;
@@ -63,7 +68,8 @@ a:hover {
     border-radius: 4px;
 }
 
-/* Contenedores de productos */
+/* 7. Contenedor para los productos, usando 
+display flex y wrap para adaptarse al espacio */
 .productos {
     display: flex;
     flex-wrap: wrap;
@@ -71,9 +77,12 @@ a:hover {
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px;
-    gap: 10px;
+    gap: 10px; 
 }
 
+/* 8. Tarjeta individual de cada producto, con 
+borde, sombra y un ligero efecto al pasar el 
+cursor */
 .producto {
     border: 1px solid #ccc;
     margin: 10px;
@@ -88,16 +97,17 @@ a:hover {
 
 .producto:hover {
     transform: scale(1.02);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Mayor sombra al hacer hover */
 }
 
 .producto img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px; 
+    border-radius: 8px;
 }
 
-/* Tablas */
+/* 9. Estilos para tablas, centralizándolas y 
+agregando un fondo blanco con borde */
 table {
     margin: 0 auto;
     border-collapse: collapse;
@@ -119,7 +129,7 @@ table th {
     color: #fff;
 }
 
-/* Formularios */
+
 form {
     text-align: center;
     margin: 20px auto;
@@ -130,10 +140,12 @@ form {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-input[type="text"], 
-input[type="email"], 
-input[type="password"], 
-textarea, 
+/* 10. Campos de texto, email, password, textarea 
+y number tienen estilos uniformes */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
 input[type="number"] {
     width: 100%;
     padding: 8px;
@@ -145,10 +157,11 @@ input[type="number"] {
 
 textarea {
     resize: vertical;
-    min-height: 80px;
+    min-height: 80px; /* Permito ajustar la altura vertical del textarea */
 }
 
-/* Botones */
+/* 11. Botones de acción con color de fondo 
+y efecto hover */
 button, 
 input[type="submit"] {
     padding: 10px 20px;
@@ -165,10 +178,11 @@ input[type="submit"] {
 button:hover, 
 input[type="submit"]:hover {
     background-color: #007c7a; 
-    transform: scale(1.05);
+    transform: scale(1.05); /* Animación leve de zoom */
 }
 
-/* Listas */
+/* 12. Listas sin viñetas, con elementos en 
+tarjetas blancas */
 ul {
     list-style: none;
     padding: 0;
@@ -182,7 +196,8 @@ li {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Responsividad adicional */
+/* 13. Ajustes de responsividad extra para 
+pantallas pequeñas */
 @media (max-width: 600px) {
     body {
         margin: 10px; 
@@ -207,6 +222,8 @@ li {
     }
 }
 
+/* 14. Ajustes para pantallas hasta 900px; 
+los productos se muestran al 50% del ancho */
 @media (max-width: 900px) {
     .productos {
         max-width: 700px;
@@ -216,6 +233,9 @@ li {
     }
 }
 
+/* 15. Ajuste adicional para pantallas ultra 
+pequeñas (hasta 400px), mostrando un producto 
+por fila ocupando todo el espacio */
 @media (max-width: 400px) {
     .producto {
         width: 100%; 
